@@ -1,0 +1,173 @@
+
+<!--<div class="row mt-3">-->
+<!--  <div class="container">-->
+    <div class="row descriptionText">
+
+      <div class="col-md-12 py-3 card roundedCard">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row px-5">
+              <b>Description:</b>
+            </div>
+
+            <div class="row px-4">
+              HERERE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-12 pt-3 pb-0 card roundedCard pagDiv">
+        <jw-pagination [items]="glucoseRecords" (changePage)="onChangePage($event)" [pageSize]="20"></jw-pagination>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-12 pt-2 card roundedCard">
+        <div class="row">
+          <!--<b>&#45;&#45;Feedback placeholder&#45;&#45;</b>-->
+          <div class="col-md-12" *ngFor="let record of onPageRecords; let i=index">
+
+            <div class="row py-1" *ngIf="!(i % 2)">
+              <div class="col-md-12">
+
+<!--                <div class="row">-->
+<!--                  <div class="col-md-12 pl-5">-->
+<!--                    <b class="mr-1" *ngIf="message.user != null">{{message.user.details.firstName}}-->
+<!--                      {{message.user.details.lastName}}</b>-->
+<!--                    <b class="mr-1" *ngIf="message.user == null">You </b>-->
+<!--                    <ngb-rating class="pl-2" [(rate)]="message.rating" [max]="5" [readonly]="true"></ngb-rating>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+                <div class="row">
+                  <div class="col-md-4 pl-3">
+                    {{record.id}}
+                  </div>
+                  <div class="col-md-4 pl-3">
+                    {{record.eventTime}}
+                  </div>
+                  <div class="col-md-4 pl-3">
+                    {{record.value}}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="row py-1 greyComment" *ngIf="(i % 2)">
+              <div class="col-md-12">
+
+<!--                <div class="row">-->
+<!--                  <div class="col-md-12 pl-5">-->
+<!--                    <b class="mr-1" *ngIf="message.user != null">{{message.user.details.firstName}}-->
+<!--                      {{message.user.details.lastName}}</b>-->
+<!--                    <b class="mr-1" *ngIf="message.user == null">You </b>-->
+<!--                    <ngb-rating class="pl-2" [(rate)]="message.rating" [max]="5" [readonly]="true"></ngb-rating>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+                <div class="row">
+                  <div class="col-md-4 pl-3">
+                    {{record.id}}
+                  </div>
+                  <div class="col-md-4 pl-3">
+                    {{record.eventTime}}
+                  </div>
+                  <div class="col-md-4 pl-3">
+                    {{record.value}}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="row greyComment commentFooter pb-2" *ngIf="!(glucoseRecords.length % 2)"></div>
+        <div class="row commentFooter pb-2" *ngIf="glucoseRecords.length % 2"></div>
+      </div>
+    </div>
+
+<!--    <div class="row mt-3" *ngIf="isFeedbackAllowed">-->
+<!--      <div class="col-md-12 pt-3 pb-2 card roundedCard">-->
+
+<!--        <form [formGroup]="feedbackForm" (ngSubmit)="addFeedback(feedbackForm.value)">-->
+<!--          <div class="row px-3">-->
+<!--            <div class="col-md-12">-->
+
+<!--              <ng-template #st let-fill="fill">-->
+<!--              <span class="smallerStar" [class.full]="fill === 100">-->
+<!--                &#9733;-->
+<!--              </span>-->
+<!--              </ng-template>-->
+
+<!--              <label for="rating">Your score: </label>-->
+<!--              <ngb-rating class="pl-2" id="rating" [formControl]="feedbackForm.controls.rating" [starTemplate]="st"-->
+<!--                          max="5"></ngb-rating>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="row px-3">-->
+<!--            <div class="col-md-12">-->
+
+<!--              <label for="message">Your message: </label>-->
+<!--              <textarea-->
+<!--                class="form-control"-->
+<!--                formControlName="feedbackMessage"-->
+<!--                id="message"-->
+<!--                placeholder="Type your feedback here"-->
+<!--                rows="5"-->
+<!--                [ngClass]="{ 'is-invalid': feedbackForm.controls.feedbackMessage.errors }"></textarea>-->
+
+<!--              <div *ngIf="feedbackForm.controls.feedbackMessage.errors" class="invalid-input">-->
+<!--                <div *ngIf="feedbackForm.controls.feedbackMessage.errors.minlength">Feedback must be at least 3-->
+<!--                  characters long-->
+<!--                </div>-->
+<!--                <div *ngIf="feedbackForm.controls.feedbackMessage.errors.maxlength">Feedback must be less than 2048-->
+<!--                  characters long-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="row px-3 pt-3" *ngIf="!isFeedbackGiven">-->
+<!--            <div class="offset-md-10"></div>-->
+<!--            <div class="col-md-2 my-auto px-auto">-->
+<!--              <button type="submit" class="btn btn-sm btn-block float-right styledButton" mdbBtn color="indigo"-->
+<!--                      mdbWavesEffect>-->
+<!--                Submit-->
+<!--                <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="row px-3 pt-3" *ngIf="isFeedbackGiven">-->
+<!--            <div class="offset-md-8"></div>-->
+<!--            <div class="col-md-2 my-auto px-2">-->
+<!--              <button type="button" class="btn btn-sm btn-block float-right styledButton" mdbBtn color="indigo"-->
+<!--                      mdbWavesEffect (click)="removeFeedback(feedbackForm.value)">-->
+<!--                Remove-->
+<!--                <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+
+<!--            <div class="col-md-2 my-auto px-2">-->
+<!--              <button type="button" class="btn btn-sm btn-block float-right styledButton" mdbBtn color="indigo"-->
+<!--                      mdbWavesEffect (click)="updateFeedback(feedbackForm.value)">-->
+<!--                Update-->
+<!--                <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </form>-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->

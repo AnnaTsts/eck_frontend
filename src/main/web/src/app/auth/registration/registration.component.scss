@@ -1,0 +1,16 @@
+img {
+  height: 350px;
+  width: 350px;
+  margin-left: 90px;
+}
+
+.example-margin {
+  margin: 0 10px;
+
+}
+
+mat-checkbox {
+  /deep/ .mat-checkbox-background {
+    background-color: #60B9CE;}
+}
+
