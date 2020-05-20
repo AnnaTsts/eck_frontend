@@ -5,6 +5,7 @@ import {LoginComponent} from "./auth/login/login.component";
 import {UserComponent} from "./user/user.component";
 import {RegistrationSuccessfulComponent} from "./auth/registration/registration-successful/registration-successful.component";
 import {IndexComponent} from "./system/index/index.component";
+import {EkgAnalitycComponent} from "./ekg-analityc/ekg-analityc.component";
 
 const appRoutes: Routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -17,7 +18,10 @@ const appRoutes: Routes = [
   },
   {path: 'login', component: LoginComponent},
   {path: '', component: IndexComponent},
-  {path: '**', redirectTo: ''},
+  {path:'ekg',
+    component: EkgAnalitycComponent
+  },
+  {path: '**', redirectTo: ''}
 ];
 
 export const routing = RouterModule.forRoot(appRoutes, {useHash: true, onSameUrlNavigation: "reload"});

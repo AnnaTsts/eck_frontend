@@ -5,79 +5,240 @@
   <div class="col-md-8">
     <div class="card loginForm">
       <!-- Name -->
-      <div class="card-block card-content">
-        <table>
+      <div *ngIf="!isEditing" class="card-block card-content ml-4 mr-4 mt-3 mb-3">
+        <div class="row">
+          <div class="col-md-12 card-title profileHeader">
+            User Information
+          </div>
+        </div>
+        <div class="row profileLine mb-2">
+          <div class="col-md-6">
+            Username: {{currentUser?.username}}
+          </div>
+          <div class="col-md-6">
+            Weight: {{currentUser?.weight}}
+          </div>
+        </div>
+        <div class="row profileLine mb-2">
+          <div class="col-md-6">
+            Email: {{currentUser?.email}}
+          </div>
+          <div class="col-md-6">
+           Height:  {{currentUser?.height}}
+          </div>
+        </div>
+        <div class="row profileLine mb-2">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">
+            Age:  {{currentUser?.age}}
+          </div>
+        </div>
+        <div class="row profileLine mb-3">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-6">
+            Sex:  {{currentUser?.sex == 1 ? 'Male' : 'Female'}}
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <button (click)="clicked()" class="btn btn-wide styledButton" color="#04819E" mdbBtn mdbWavesEffect>
+              Edit Information
+              <!--            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-wide cancelButton" color="#F66F89" mdbBtn mdbWavesEffect>
+              Analyse EKG
+<!--              <img class="button-img-small" alt="doctor" src="../../../assets/images/pulse_but.png">-->
+              <!--            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+            </button>
+          </div>
+        </div>
 
-            <thead>
-            <tr class="second">
-              <th colspan="2"><h3 class="card-title" align="left">User Information</h3></th>
-            </tr>
-            </thead>
-          <td>
-            <tr>
-              <td>
-                <b>Username: </b>
-              </td>
-              <td>
-                {{currentUser?.username}}
-              </td>
-            </tr>
-            <tr class="second">
-              <td>
-                <b>Email: </b>
-              </td>
-              <td>
-                {{currentUser?.email}}
-              </td>
-            </tr>
-          </td>
+<!--        <table>-->
 
-          <td>
-            <tr>
-              <td>
-                <b>Weight: </b>
-              </td>
-              <td>
-                {{currentUser?.weight}}
-              </td>
-            </tr>
+<!--          <thead>-->
+<!--          <tr class="second">-->
+<!--            <th colspan="2"><h3 class="card-title" align="left">User Information</h3></th>-->
+<!--          </tr>-->
+<!--          </thead>-->
+<!--          <td>-->
+<!--            <tr>-->
+<!--              <td>-->
+<!--                <b>Username: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.username}}-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            <tr class="second">-->
+<!--              <td>-->
+<!--                <b>Email: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.email}}-->
+<!--              </td>-->
+<!--            </tr>-->
 
-            <tr>
-              <td>
-                <b>Height: </b>
-              </td>
-              <td>
-                {{currentUser?.height}}
-              </td>
-            </tr>
+<!--          </td>-->
 
+<!--          <td>-->
+<!--            <tr>-->
+<!--              <td>-->
+<!--                <b>Weight: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.weight}}-->
+<!--              </td>-->
+<!--            </tr>-->
 
-            <tr>
-              <td>
-                <b>Age: </b>
-              </td>
-              <td>
-                {{currentUser?.age}}
-              </td>
-            </tr>
+<!--            <tr>-->
+<!--              <td>-->
+<!--                <b>Height: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.height}}-->
+<!--              </td>-->
+<!--            </tr>-->
 
 
-            <tr>
-              <td>
-                <b>Sex: </b>
-              </td>
-              <td>
-                {{currentUser?.sex}}
-              </td>
-            </tr>
-
-          </td>
+<!--            <tr>-->
+<!--              <td>-->
+<!--                <b>Age: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.age}}-->
+<!--              </td>-->
+<!--            </tr>-->
 
 
-        </table>
+<!--            <tr>-->
+<!--              <td>-->
+<!--                <b>Sex: </b>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                {{currentUser?.sex}}-->
+<!--              </td>-->
+<!--            </tr>-->
+
+<!--          </td>-->
+
+
+<!--        </table>-->
+
+
+<!--        <div class="row">-->
+<!--          <div class="col-md-6">-->
+<!--            <button class="btn btn-wide styledButton" color="#04819E" mdbBtn mdbWavesEffect>-->
+<!--              Edit Information-->
+<!--              &lt;!&ndash;            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>&ndash;&gt;-->
+<!--            </button>-->
+<!--          </div>-->
+
+<!--          <div class="col-md-6">-->
+<!--            <button class="btn btn-wide styledButton" color="#04819E" mdbBtn mdbWavesEffect>-->
+<!--              Analyse EKG-->
+<!--              &lt;!&ndash;            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>&ndash;&gt;-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
 
 
       </div>
+
+      <div *ngIf="isEditing" class="card-block card-content ml-4 mr-4 mt-3 mb-3">
+
+        <div class="row">
+          <div class="col-md-12 card-title profileHeader">
+            User Information
+          </div>
+        </div>
+        <div class="row profileLine mb-2">
+          <div class="col-md-2 pr-0">
+            Username:
+          </div>
+          <div class="col-md-4">
+            <input class="form-control" type="text" [(ngModel)]="editableUser.username"/>
+          </div>
+          <div class="col-md-2 pr-0">
+            Weight:
+          </div>
+          <div class="col-md-4 pl-0">
+            <input class="form-control" type="number" [(ngModel)]="editableUser.weight"/>
+          </div>
+        </div>
+        <div class="row profileLine mb-2">
+          <div class="col-md-2">
+            Email:
+          </div>
+          <div class="col-md-4">
+            <input class="form-control" type="text" [(ngModel)]="editableUser.email"/>
+          </div>
+          <div class="col-md-2">
+            Height:
+          </div>
+          <div class="col-md-4 pl-0">
+            <input class="form-control" type="number" [(ngModel)]="editableUser.height"/>
+          </div>
+        </div>
+<!--        <div class="col-md-4 pl-0">-->
+<!--          <input class="form-control" type="text" [(ngModel)]="editableUser.weight"/>-->
+<!--        </div>-->
+        <div class="row profileLine mb-2">
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-2">
+            Age:
+          </div>
+          <div class="col-md-4 pl-0">
+            <input class="form-control" type="number" [(ngModel)]="editableUser.age"/>
+
+          </div>
+        </div>
+<!--        <div class="row profileLine mb-3">-->
+<!--          <div class="col-md-6">-->
+<!--          </div>-->
+<!--          <div class="col-md-2">-->
+<!--           Sex:-->
+<!--          </div>-->
+<!--          <div class="col-md-4 pl-0">-->
+<!--            <input class="form-control" type="text" [(ngModel)]="editableUser.sex"/>-->
+<!--          </div>-->
+<!--        </div>-->
+
+                <div class="row profileLine mb-3">
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-md-2">
+                   Sex:
+                  </div>
+                  <div class="col-md-4 pl-0">
+                    <select class="form-control" [(ngModel)]="selectedValue.id">
+                      <option *ngFor="let c of sex" [ngValue]="c.id">{{c.name}}</option>
+                    </select>
+                  </div>
+                </div>
+
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <button (click)="save()" class="btn btn-wide styledButton" color="#04819E" mdbBtn mdbWavesEffect>
+              Save
+              <!--            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button (click)="clicked()" class="btn btn-wide cancelButton" color="#F66F89" mdbBtn mdbWavesEffect>
+              Cancel
+              <!--            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
 
 

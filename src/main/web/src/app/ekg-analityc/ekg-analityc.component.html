@@ -1,0 +1,30 @@
+<div class="row" class ='big-margin'>
+  <div class="col-md-5">
+  </div>
+
+  <div class="col-md-6">
+
+
+    <div class="form-group right-margin">
+      <label for="file">Choose File </label> <p>
+      <input type="file"
+             accept=".csv"
+             accept=".txt"
+              placeholder="Choose File"
+             (change)="handleFileInput($event.target.files)"
+             id="file"
+      >
+
+      <div class="col-md-6">
+        <button class="btn btn-wide cancelButton" (click)="uploadFileToActivity()" color="#F66F89" mdbBtn mdbWavesEffect>
+          Analyse EKG
+          <!--              <img class="button-img-small" alt="doctor" src="../../../assets/images/pulse_but.png">-->
+          <!--            <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>-->
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

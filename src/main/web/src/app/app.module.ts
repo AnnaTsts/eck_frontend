@@ -28,8 +28,10 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {ShareDataService} from "@services/share-data.service";
 import {SnackbarComponent} from './model/snackbar/snackbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { GlucoseRecordsComponent } from './glucose-records/glucose-records.component';
+import { GlucoseRecordsComponent } from './garbage/glucose-records.component';
 import {JwPaginationComponent} from "jw-angular-pagination";
+// import { EkgComponent } from './ekg/ekg.component';
+import { EkgAnalitycComponent } from './ekg-analityc/ekg-analityc.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {JwPaginationComponent} from "jw-angular-pagination";
     RegistrationSuccessfulComponent,
     SnackbarComponent,
     GlucoseRecordsComponent,
-    JwPaginationComponent
+    JwPaginationComponent,
+    // EkgComponent,
+    EkgAnalitycComponent
   ],
   imports: [
     BrowserModule,

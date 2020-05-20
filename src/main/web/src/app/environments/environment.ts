@@ -14,6 +14,8 @@ export const REGISTRATION_URL = API_URL + "auth/signup";
 export const GLUCOSE_ENDPOINT_URL = API_URL + "glucose/";
 export const GET_GLUCOSE_RECORDS_FOR_CURR_USER_URL = GLUCOSE_ENDPOINT_URL + "user/";
 
+export const USER_ENDPOINT_URL = API_URL + "user/";
+export const GET_USER_SUMMARY_URL = USER_ENDPOINT_URL + "info/";
 
 export const INIT_TEXT = "Cardiovascular diseases are widespread throughout the world and are a major cause of death. Every year, 17.5 million people worldwide die from cardiovascular disease. Analysis of electrocardiograms allows to determine the presence of various abnormalities in the heart such as blockade, myocardial damage of various ischemic (when the heart muscle lacks oxygen due to impaired blood flow through blood vessels) or dystrophic (when the heart suffers secondary to endocrine disorders, electrolyte changes). blood composition, anemia and other causes). Also, the analysis of electrocardiograms allows you to assess the regularity of heart rate (normal, too fast, slow or irregular). Thanks to the correct diagnosis, it is possible to detect cardiac disorders in time and take all necessary measures to restore its normal functioning as soon as possible.";
 //
